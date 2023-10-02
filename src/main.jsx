@@ -7,8 +7,10 @@ import { router } from './routes/Routes'
 import { Toaster } from 'react-hot-toast'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <AuthProvider>
-    <Toaster />
+ <div>
+  <Toaster />
     <RouterProvider router={router} />
-  </AuthProvider>
+ </div>
+    
+  
 )
