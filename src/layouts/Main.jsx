@@ -1,7 +1,9 @@
+import Navbar from "../Components/Shared/Navbar/Navbar"
+
 const Main = () => {
   return (
     <div>
-      <h1>Welcome TO Traveler Home</h1>
+      <Navbar></Navbar>
     </div>
   )
 }
