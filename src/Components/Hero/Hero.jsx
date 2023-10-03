@@ -6,14 +6,13 @@ import animation1 from '../../assets/lottie/animation1.json';
 import animation2 from '../../assets/lottie/animation2.json';
 import animation3 from '../../assets/lottie/animation3.json';
 import animation1o1 from '../../assets/lottie/animation1o1.json';
-import Container from '../Shared/Container/Container';
 import { Fade, Zoom } from "react-awesome-reveal";
 const Hero = () => {
   return (
-    <Container>
-      <div className='pt-32 text-black' >
+    
+      <div className='pt-32 ' >
         <Carousel className="pb-2 text-center px-2" infiniteLoop={true}>
-          <div className="carousel-sle text-black flex flex-col-reverse justify-center  items-center md:flex-row md:justify-between text-xm md:text-lg md:font-semibold md:pl-10">
+          <div className="carousel-sle text-violet-950 flex flex-col-reverse justify-center  items-center md:flex-row md:justify-between text-xm md:text-lg md:font-semibold md:pl-10">
 
 
 
@@ -25,11 +24,11 @@ const Hero = () => {
             />
 
 
-            <div>
+            <div >
               <Zoom duration={3000}>
-                <p>
-                  Welcome to Traveler Home - <br />
-                  -where journeys are reimagined.
+                <p className='font-serif'>
+                  Welcome to Traveller Home !<br />
+                  Where journeys are reimagined
                 </p>
               </Zoom>
             </div>
@@ -49,7 +48,7 @@ const Hero = () => {
               animationData={animation2}
               loop={true}
               autoplay={true}
-              style={{ width: '40%', height: '40%' }}
+              style={{ width: '60%', height: '50%' }}
             />
 
 
@@ -89,7 +88,7 @@ const Hero = () => {
           </div>
         </Carousel>
       </div>
-    </Container>
+    
   );
 };
 
