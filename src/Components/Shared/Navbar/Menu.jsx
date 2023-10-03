@@ -46,13 +46,13 @@ const Menu = () => {
                                 <>
                                     <Link
                                         to='/login'
-                                        className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                        className='px-4 py-3 hover:text-teal-600 transition font-semibold'
                                     >
                                         Login
                                     </Link>
                                     <Link
                                         to='/signup'
-                                        className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                                        className='px-4 py-3 hover:text-teal-600 transition font-semibold'
                                     >
                                         Sign Up
                                     </Link>
