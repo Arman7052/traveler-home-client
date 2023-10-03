@@ -23,7 +23,7 @@ const Menu = () => {
                         className='p-4  md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-md cursor-pointer hover:shadow-md transition'
                     >
                         <AiOutlineMenu className='text-teal-600 ' />
-                        <img src={user && user.PhotoURL ? user.PhotoURL : avater} alt="" height={20} width={20} className='rounded-full' />
+                        <img src={user && user.photoURL ? user.photoURL : avater} alt="" height={20} width={20} className='rounded-full' />
                     </div>
                 </div>
                 {isOpen && (
