@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { ImSpinner9 } from 'react-icons/im';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -85,7 +86,11 @@ const SignUp = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center text-center md:flex-row md:justify-evenly'>
+        <div className='flex flex-col justify-center items-center text-center md:flex-row md:justify-evenly'>\
+            <Helmet>
+                <title>Traveller Home | SignIn</title>
+
+            </Helmet>
             <div className=''>
                 <Zoom duration={1000} >
                     <h1 className='my-3 text-4xl font-bold text-center md:pt-20'>Sign Up</h1>

@@ -7,6 +7,7 @@ import logInLottie from '../../assets/Lottie/animation_lna57pgn.json';
 import Lottie from 'lottie-react';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 const LogIn = () => {
     const { loading, setLoading, signIn, signInWithGoogle, resetPassword, } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -63,6 +64,11 @@ const LogIn = () => {
 
 
         <div className='flex flex-col justify-center items-center text-center md:flex-row md:justify-evenly'>
+             <Helmet>
+                <title>Traveller Home | LogIn</title>
+
+            </Helmet>
+
             <div>
                 <Zoom duration={1000} >
                     <h1 className='my-3 text-4xl font-bold text-center md:pt-20'>Log In</h1>
