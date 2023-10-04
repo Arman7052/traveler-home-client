@@ -9,7 +9,7 @@ import { useSearchParams } from "react-router-dom";
 const Rooms = () => {
     const [rooms, setRooms] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [params, setParams] = useSearchParams();
+    const [params] = useSearchParams();
     const category = params.get('category');
     useEffect(() => {
         setLoading(true)

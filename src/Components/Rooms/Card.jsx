@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import StarButton from '../Buttons/Starbutton'
 
 
-const Card = ({ room }) => {
+const Card = ({room}) => {
+    console.log(room);
   return (
     <Link to={`/room/${1}`} className='col-span-1 cursor-pointer group'>
       <div className='flex flex-col gap-2 w-full'>
