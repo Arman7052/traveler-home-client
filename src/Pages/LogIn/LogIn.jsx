@@ -8,6 +8,7 @@ import Lottie from 'lottie-react';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
+import Logo from '../../Components/Shared/Navbar/Logo';
 const LogIn = () => {
     const { loading, setLoading, signIn, signInWithGoogle, resetPassword, } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -64,7 +65,7 @@ const LogIn = () => {
 
 
         <div className='flex flex-col justify-center items-center text-center md:flex-row md:justify-evenly'>
-             <Helmet>
+            <Helmet>
                 <title>Traveller Home | LogIn</title>
 
             </Helmet>
@@ -84,6 +85,10 @@ const LogIn = () => {
                 <Fade direction='down' duration={800}>
                     <div className='flex justify-center items-center min-h-screen'>
                         <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-violet-950'>
+                            <div className='mb-8 text-center flex justify-center items-center'>
+
+                                <Link to={'/'}><Logo></Logo></Link>
+                            </div>
                             <div className='mb-8 text-center'>
 
                                 <p className='text-sm text-gray-400'>
@@ -131,9 +136,9 @@ const LogIn = () => {
 
                                 <div>
                                     <button
-                                        
+
                                         type='submit'
-                                        className='bg-blue-500 hover:bg-teal-500 w-full rounded-md py-3 text-white'
+                                        className='bg-blue-500 hover:bg-teal-600 w-full rounded-md py-3 text-white'
                                     >
                                         {
                                             loading ? <ImSpinner9 className='m-auto animate-spin'></ImSpinner9> : 'Continue'
@@ -142,7 +147,7 @@ const LogIn = () => {
                                 </div>
                             </form>
                             <div className='space-y-1'>
-                                <button onClick={handleReset} className='text-xs hover:underline hover:text-teal-500 text-gray-400'>
+                                <button onClick={handleReset} className='text-xs hover:underline hover:text-teal-600 text-gray-400'>
                                     Forgot password?
                                 </button>
                             </div>
@@ -153,18 +158,18 @@ const LogIn = () => {
                                 </p>
                                 <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                             </div>
-                            <div onClick={handleGoogleSignIn} className='flex justify-evenly items-center space-x-2 border m-3 p-2 bg-blue-500 hover:bg-teal-500 rounded-full border-gray-300 border-rounded cursor-pointer'>
+                            <div onClick={handleGoogleSignIn} className='flex justify-evenly items-center space-x-2 border m-3 p-2 bg-blue-500 hover:bg-teal-600 rounded-md border-gray-300 border-rounded cursor-pointer'>
                                 <FcGoogle size={32} />
 
                                 <p>Continue with Google</p>
                             </div>
                             <p className='px-6 text-sm text-center text-gray-400'>
-                                Don't have an account yet?{' '}
+                                New in Traveller Home?{' '}
                                 <Link
                                     to='/signup'
                                     className='hover:underline hover:text-teal-500 text-gray-600'
                                 >
-                                    Sign up
+                                    Sign up now
                                 </Link>
                                 .
                             </p>

@@ -8,6 +8,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { ImSpinner9 } from 'react-icons/im';
 import { Helmet } from 'react-helmet-async';
+import Logo from '../../Components/Shared/Navbar/Logo';
 
 
 
@@ -41,6 +42,7 @@ const SignUp = () => {
 
                 createUser(email, password)
                     .then(result => {
+                        console.log(result);
                         updateUserProfile(name, imageUrl)
                             .then(() => {
                                 toast.success('Signup successful')
@@ -73,7 +75,7 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                // console.log(result.user)
+                console.log(result.user)
                 navigate(from, { replace: true })
             })
             .catch(err => {
@@ -105,9 +107,9 @@ const SignUp = () => {
             <Fade direction='down' duration={800}>
                 <div className='flex justify-center items-center min-h-screen'>
                     <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
-                        <div className='mb-8 text-center'>
+                        <div className='mb-8 text-center flex justify-center items-center'>
 
-                            <p className='text-sm text-gray-400'>Welcome to Traveller Home</p>
+                            <Link to={'/'}><Logo></Logo></Link>
                         </div>
                         <form
                             onSubmit={handleSubmit}
@@ -177,7 +179,7 @@ const SignUp = () => {
                             <div>
                                 <button
                                     type='submit'
-                                    className='bg-blue-500 hover:bg-teal-500 w-full rounded-md py-3 text-white'
+                                    className='bg-blue-500 hover:bg-teal-700 hover:text-white w-full rounded-md py-3 text-white'
                                 >
                                     {
                                         loading ? <ImSpinner9 className='m-auto animate-spin'></ImSpinner9> : 'Continue'
@@ -192,7 +194,7 @@ const SignUp = () => {
                             </p>
                             <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                         </div>
-                        <div onClick={handleGoogleSignIn} className='flex justify-center items-center rounded-md space-x-2 border  p-2 bg-blue-500 hover:bg-teal-500  border-teal-300 border-rounded cursor-pointer'>
+                        <div onClick={handleGoogleSignIn} className='flex justify-center items-center rounded-md space-x-2 border  p-2 bg-blue-500 hover:bg-teal-700 hover:text-white border-teal-300 border-rounded cursor-pointer'>
                             <FcGoogle size={32} />
 
                             <p>Continue with Google</p>
@@ -215,4 +217,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default SignUp ;
