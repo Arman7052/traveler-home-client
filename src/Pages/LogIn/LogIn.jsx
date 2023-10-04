@@ -1,20 +1,59 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
+import { ImSpinner9 } from 'react-icons/im'
 import { AuthContext } from '../../providers/AuthProvider';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import logInLottie from '../../assets/Lottie/animation_lna57pgn.json';
 import Lottie from 'lottie-react';
 import { Fade, Zoom } from 'react-awesome-reveal';
 import toast from 'react-hot-toast';
 const LogIn = () => {
     const { loading, setLoading, signIn, signInWithGoogle, resetPassword, } = useContext(AuthContext);
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const emailRef = useRef()
+
+    // Handle submit
+    const handleSubmit = event => {
+        event.preventDefault()
+        const email = event.target.email.value
+        const password = event.target.password.value
+        signIn(email, password)
+            .then(result => {
+                console.log(result.user)
+                navigate(from, { replace: true })
+            })
+            .catch(err => {
+                setLoading(false)
+                console.log(err.message)
+                toast.error(err.message)
+            })
+    }
+
+    //   handle password reset
+    const handleReset = () => {
+        const email = emailRef.current.value
+
+        resetPassword(email)
+            .then(() => {
+                toast.success('Please check your email for reset link')
+                setLoading(false)
+            })
+            .catch(err => {
+                setLoading(false)
+                console.log(err.message)
+                toast.error(err.message)
+            })
+    }
+
     // Handle google sign in 
     const handleGoogleSignIn = () => {
         signInWithGoogle().then(result => {
             console.log(result.user);
             navigate('/')
         }).catch(err => {
+            setLoading(false);
             console.log(err.message);
             toast.error(err.message)
         })
@@ -45,6 +84,7 @@ const LogIn = () => {
                                 </p>
                             </div>
                             <form
+                                onSubmit={handleSubmit}
                                 noValidate=''
                                 action=''
                                 className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -55,6 +95,7 @@ const LogIn = () => {
                                             Email address
                                         </label>
                                         <input
+                                            ref={emailRef}
                                             type='email'
                                             name='email'
                                             id='email'
@@ -83,15 +124,18 @@ const LogIn = () => {
 
                                 <div>
                                     <button
+                                        
                                         type='submit'
                                         className='bg-blue-500 hover:bg-teal-500 w-full rounded-md py-3 text-white'
                                     >
-                                        Continue
+                                        {
+                                            loading ? <ImSpinner9 className='m-auto animate-spin'></ImSpinner9> : 'Continue'
+                                        }
                                     </button>
                                 </div>
                             </form>
                             <div className='space-y-1'>
-                                <button className='text-xs hover:underline hover:text-teal-500 text-gray-400'>
+                                <button onClick={handleReset} className='text-xs hover:underline hover:text-teal-500 text-gray-400'>
                                     Forgot password?
                                 </button>
                             </div>
