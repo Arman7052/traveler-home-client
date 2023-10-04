@@ -14,7 +14,7 @@ const LogIn = () => {
     const from = location.state?.from?.pathname || '/'
     const emailRef = useRef()
 
-    // Handle submit
+    // Handle form submit 
     const handleSubmit = event => {
         event.preventDefault()
         const email = event.target.email.value
@@ -31,7 +31,8 @@ const LogIn = () => {
             })
     }
 
-    //   handle password reset
+    //   handle password reset option
+
     const handleReset = () => {
         const email = emailRef.current.value
 
