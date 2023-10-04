@@ -3,10 +3,12 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const CategoryBox = ( { label, icon: Icon , selected }) => {
    
-   
-    const [params] = useSearchParams()
-    const navigate = useNavigate()
-    const handleClick = () => {
+    const [params , setParams] = useSearchParams();
+    const navigate = useNavigate();
+
+    // Handle the category selection 
+
+    const handleCategoryClick = () => {
       let currentQuery = {}
       if (params) {
         currentQuery = qs.parse(params.toString())
@@ -30,7 +32,7 @@ const CategoryBox = ( { label, icon: Icon , selected }) => {
 
     return (
       <div
-        onClick={handleClick}
+        onClick={handleCategoryClick}
         className={`
           flex 
           flex-col 
@@ -44,13 +46,13 @@ const CategoryBox = ( { label, icon: Icon , selected }) => {
           cursor-pointer
           ${
             selected
-              ? 'border-b-neutral-800 text-violet-950'
-              : 'border-transparent text-violet-950'
+              ? 'border-b-neutral-800 text-blue-300'
+              : 'border-transparent text-blue-300'
           }
        
         `}
       >
-        <Icon size={26} />
+        <Icon size={26} ></Icon>
         <div className='text-sm font-medium'>{label}</div>
       </div>
     )
