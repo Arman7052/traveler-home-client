@@ -9,6 +9,7 @@ import { Fade, Zoom } from 'react-awesome-reveal';
 import toast from 'react-hot-toast';
 import { Helmet } from 'react-helmet-async';
 import Logo from '../../Components/Shared/Navbar/Logo';
+import { saveUser } from '../../apis/Authentication/auth';
 const LogIn = () => {
     const { loading, setLoading, signIn, signInWithGoogle, resetPassword, } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -54,7 +55,8 @@ const LogIn = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle().then(result => {
             console.log(result.user);
-            navigate('/')
+            saveUser(result.user);
+            navigate('/');
         }).catch(err => {
             setLoading(false);
             console.log(err.message);

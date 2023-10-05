@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { ImSpinner9 } from 'react-icons/im';
 import { Helmet } from 'react-helmet-async';
 import Logo from '../../Components/Shared/Navbar/Logo';
+import { saveUser } from '../../apis/Authentication/auth';
 
 
 
@@ -45,29 +46,30 @@ const SignUp = () => {
                         console.log(result);
                         updateUserProfile(name, imageUrl)
                             .then(() => {
-                                toast.success('Signup successful')
+                                toast.success('Signup successful');
+                                saveUser(result.user);
                                 navigate(from, { replace: true })
                             })
                             .catch(err => {
-                                setLoading(false)
-                                console.log(err.message)
-                                toast.error(err.message)
+                                setLoading(false);
+                                console.log(err.message);
+                                toast.error(err.message);
                             })
                     })
                     .catch(err => {
-                        setLoading(false)
-                        console.log(err.message)
-                        toast.error(err.message)
+                        setLoading(false);
+                        console.log(err.message);
+                        toast.error(err.message);
                     })
             })
             .catch(err => {
-                setLoading(false)
-                console.log(err.message)
-                toast.error(err.message)
-            })
+                setLoading(false);
+                console.log(err.message);
+                toast.error(err.message);
+            });
 
         return
-    }
+    };
 
 
     // Handle google signIn
@@ -75,15 +77,16 @@ const SignUp = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
-                console.log(result.user)
-                navigate(from, { replace: true })
+                console.log(result.user);
+                saveUser(result.user);
+                navigate(from, { replace: true });
             })
             .catch(err => {
-                setLoading(false)
-                console.log(err.message)
-                toast.error(err.message)
-            })
-    }
+                setLoading(false);
+                console.log(err.message);
+                toast.error(err.message);
+            });
+    };
 
 
 
