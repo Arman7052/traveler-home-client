@@ -50,4 +50,4 @@ const Card = ({room}) => {
   )
 }
 
-export default Card
+export default Card ;

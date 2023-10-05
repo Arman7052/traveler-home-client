@@ -8,7 +8,7 @@ import RoomDetails from '../Pages/RoomDetails/RoomDetails'
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main />,
+    element: <Main></Main>,
     children: [
       {
         path: '/',

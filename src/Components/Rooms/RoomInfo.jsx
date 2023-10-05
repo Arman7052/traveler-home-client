@@ -3,7 +3,7 @@ import React from 'react';
 const RoomInfo = () => {
     return (
         <div>
-            <div className='col-span-4 flex flex-col gap-8'>
+            <div className='col-span-5 flex flex-col gap-4'>
                 <div className='flex flex-col gap-2'>
                     <div className='text-xl font-semibold flex flex-row items-center gap-2' >
                         <div>Hosted by Veluvana</div>
@@ -24,8 +24,9 @@ const RoomInfo = () => {
                 </div>
 
                 <hr />
-                <div className=' text-lg font-light text-neutral-500'
-                >
+
+                <div className=' text-lg font-serif  text-neutral-500'>
+                    
                     Veluvana is a unique bamboo house with a wonderful view of Sidemen
                     Valley, a genuine tropical landscape with Mount Agung peak on its back.
                     This getaway spot is a great place to bring into reality the dream

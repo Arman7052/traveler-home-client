@@ -119,9 +119,7 @@ const SignUp = () => {
                         >
                             <div className='space-y-4'>
                                 <div>
-                                    {/* <label htmlFor='email' className='block mb-2 text-sm'>
-                                    Name
-                                </label> */}
+
                                     <input
                                         type='text'
                                         name='name'
@@ -201,13 +199,11 @@ const SignUp = () => {
                         </div>
                         <p className='px-6 text-sm text-center text-gray-400'>
                             Already have an account?{' '}
-                            <Link
-                                to='/login'
-                                className='hover:underline hover:text-teal-500 text-gray-600'
-                            >
+
+                            <Link to='/login' className='hover:underline hover:text-teal-500 text-gray-600' >
                                 Login
                             </Link>
-                            .
+                            
                         </p>
                     </div>
                 </div>
@@ -217,4 +213,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp ;
+export default SignUp;

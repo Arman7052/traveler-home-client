@@ -36,7 +36,7 @@ const Rooms = () => {
             {rooms && rooms.length > 0 ? (
                 <div className='pt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
                     {rooms.map((room, index) => (
-                        <Card key={index} room={room} />
+                        <Card key={index} room={room} ></Card>
                     ))}
                 </div>
             ) : (
@@ -45,7 +45,7 @@ const Rooms = () => {
                         title='No Rooms Available In This Category!'
                         subtitle='Please Select Other Categories.'
                         center={true}
-                    />
+                    ></Heading>
                 </div>
             )}
         </div>

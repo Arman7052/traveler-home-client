@@ -5,7 +5,7 @@ import 'react-date-range/dist/theme/default.css'
 
 const Calender = () => {
     return (
-        <div>
+        <div className='text-center'>
             <DateRange
                 rangeColors={['#262626']}
                 date={new Date()}

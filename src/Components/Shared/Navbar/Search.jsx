@@ -11,7 +11,7 @@ const Search = () => {
                     <div className='text-sm pl-6 pr-2 text-gray-600 flex flex-row items-center gap-3'>
                         <div className='hidden sm:block hover:text-teal-600'>Add Guests</div>
                         <div className='p-2  rounded-full text-teal-600'>
-                            <BiSearch size={18} />
+                            <BiSearch size={18} ></BiSearch>
                         </div>
                     </div>
                 </div>
