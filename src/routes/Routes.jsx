@@ -6,6 +6,7 @@ import SignUp from '../Pages/SignUp/SignUp'
 import RoomDetails from '../Pages/RoomDetails/RoomDetails'
 import PrivateRoute from './PrivateRoute'
 import DashBoardLayOuts from '../layouts/DashBoard/DashBoardLayOuts'
+import AddRoom from '../Pages/DashBoardPage/AddRoom'
 
 
 export const router = createBrowserRouter([
@@ -37,7 +38,8 @@ export const router = createBrowserRouter([
     element: <DashBoardLayOuts></DashBoardLayOuts>,
     children: [
       {
-        
+        path: '/dashboard/add-room',
+        element: <AddRoom></AddRoom>
       }
     ]
   }
