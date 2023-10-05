@@ -1,17 +1,17 @@
-import  { useContext, useState } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { AuthContext } from '../../providers/AuthProvider'
-import Logo from '../Shared/Navbar/Logo'
-import { GrLogout } from 'react-icons/gr'
-import { FcSettings } from 'react-icons/fc'
-import { AiOutlineBars } from 'react-icons/ai'
-import { BsFillHouseAddFill } from 'react-icons/bs'
+import  { useContext, useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProvider';
+import Logo from '../Shared/Navbar/Logo';
+import { GrLogout } from 'react-icons/gr';
+import { FcSettings } from 'react-icons/fc';
+import { AiOutlineBars } from 'react-icons/ai';
+import { BsFillHouseAddFill } from 'react-icons/bs';
 const Sidebar = () => {
-  const navigate = useNavigate()
-  const [toggle, setToggle] = useState(false)
-  const { user, logOut } = useContext(AuthContext)
+  const navigate = useNavigate();
+  const [toggle, setToggle] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
-  const [isActive, setActive] = useState('false')
+  const [isActive, setActive] = useState('false');
   const toggleHandler = event => {
     setToggle(event.target.checked)
   }
@@ -26,6 +26,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Small Screen Navbar */}
+
       <div className='bg-gray-100 text-gray-800 flex justify-between md:hidden'>
         <div>
           <div className='block cursor-pointer p-4 font-bold'>
@@ -47,7 +48,9 @@ const Sidebar = () => {
         }  md:translate-x-0  transition duration-200 ease-in-out`}
       >
         <div>
-          {/* Branding & Profile Info */}
+
+          {/*  Profile Info */}
+
           <div>
             <div className='w-full hidden md:flex py-2 justify-center items-center bg-blue-100 mx-auto'>
               <Logo ></Logo>
@@ -75,6 +78,8 @@ const Sidebar = () => {
           </div>
 
           {/* Nav Items */}
+
+          
           <div className='flex flex-col justify-between flex-1 mt-6'>
             <nav>
               <>
