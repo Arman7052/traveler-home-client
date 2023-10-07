@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
   },
   {
     path:'/dashboard',
-    element: <DashBoardLayOuts></DashBoardLayOuts>,
+    element: <PrivateRoute><DashBoardLayOuts></DashBoardLayOuts></PrivateRoute>,
     children: [
       {
         path: '/dashboard/add-room',

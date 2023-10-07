@@ -1,5 +1,5 @@
 import { DateRange } from 'react-date-range'
-import { TbFidgetSpinner } from 'react-icons/tb'
+import { ImSpinner9 } from 'react-icons/im'
 import { categories } from '../Catagory/catagoryData';
 
 const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handleImageChange, uploadButtonText }) => {
@@ -163,7 +163,7 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
           className='w-full p-3 pb-2 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-teal-500'
         >
           {loading ? (
-            <TbFidgetSpinner className='m-auto animate-spin' size={24} />
+            <ImSpinner9 className='m-auto animate-spin' size={24} />
           ) : (
             'Save & Continue'
           )}

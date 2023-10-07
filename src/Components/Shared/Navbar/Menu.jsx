@@ -22,7 +22,7 @@ const Menu = () => {
 
                         <AiOutlineMenu className='text-teal-600 ' ></AiOutlineMenu>
 
-                        <img src={user && user.photoURL ? user.photoURL : avater} alt="" height={20} width={20} className='rounded-full' />
+                        <img src={user && user.photoURL ? user.photoURL : avater} alt=" avater" height={20} width={20} className='rounded-full' />
 
                     </div>
                 </div>

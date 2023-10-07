@@ -48,7 +48,7 @@ const SignUp = () => {
                             .then(() => {
                                 toast.success('Signup successful');
                                 saveUser(result.user);
-                                navigate(from, { replace: true })
+                                navigate(from, { replace: true });
                             })
                             .catch(err => {
                                 setLoading(false);

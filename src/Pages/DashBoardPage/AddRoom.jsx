@@ -5,6 +5,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { imageUpload } from "../../apis/utils";
 import { addRoom } from "../../apis/rooms";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const AddRoom = () => {
@@ -14,24 +15,24 @@ const AddRoom = () => {
     startDate: new Date(),
     endDate: new Date(),
     key: 'selection',
-  })
+  });
   const [loading, setLoading] = useState(false);
   const [uploadButtonText, setUploadButtonText] = useState('Upload Image');
   // handle form submit
   const handleSubmit = event => {
     event.preventDefault()
     setLoading(true)
-    const location = event.target.location.value
-    const title = event.target.title.value
-    const from = dates.startDate
-    const to = dates.endDate
-    const price = event.target.price.value
-    const guests = event.target.total_guest.value
-    const bedrooms = event.target.bedrooms.value
-    const bathrooms = event.target.bathrooms.value
-    const description = event.target.description.value
-    const category = event.target.category.value
-    const image = event.target.image.files[0]
+    const location = event.target.location.value;
+    const title = event.target.title.value;
+    const from = dates.startDate;
+    const to = dates.endDate;
+    const price = event.target.price.value;
+    const guests = event.target.total_guest.value;
+    const bedrooms = event.target.bedrooms.value;
+    const bathrooms = event.target.bathrooms.value;
+    const description = event.target.description.value;
+    const category = event.target.category.value;
+    const image = event.target.image.files[0];
     setUploadButtonText('Uploading...')
     // Upload image
     imageUpload(image)
@@ -64,13 +65,13 @@ const AddRoom = () => {
             toast.success('Room Added!')
             navigate('/dashboard/my-listings')
           })
-          .catch(err => console.log(err))
+          .catch(err => console.log(err));
 
-        setLoading(false)
+        setLoading(false);
       })
       .catch(err => {
-        console.log(err.message)
-        setLoading(false)
+        console.log(err.message);
+        setLoading(false);
       })
   }
 
@@ -84,6 +85,10 @@ const AddRoom = () => {
   }
     return (
         <div>
+          <Helmet>
+                <title>Traveller Home | Add Room </title>
+
+            </Helmet>
             <AddRoomForm
             handleSubmit={handleSubmit}
             loading={loading}

@@ -56,7 +56,7 @@ const LogIn = () => {
         signInWithGoogle().then(result => {
             console.log(result.user);
             saveUser(result.user);
-            navigate('/');
+            navigate(from, { replace: true });
         }).catch(err => {
             setLoading(false);
             console.log(err.message);
