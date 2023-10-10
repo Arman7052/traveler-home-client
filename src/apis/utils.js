@@ -1,4 +1,4 @@
-// upload image in IMGBB
+// Upload image in IMGBB
 export const imageUpload = async image => {
   const formData = new FormData()
   formData.append('image', image)
@@ -11,4 +11,4 @@ export const imageUpload = async image => {
   })
   const data = await response.json()
   return data
-}
+};

@@ -6,7 +6,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 
 const Menu = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, role, setRole } = useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false)
     const toggleOpen = useCallback(() => {
         setIsOpen(value => !value)
@@ -38,20 +38,40 @@ const Menu = () => {
                             </Link>
 
                             {user ? (
-                                <div onClick={logOut} className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer' >
-                                    Logout
-                                </div>
-                            ) : (
-                                <>
-                                    <Link to='/login' className='px-4 py-3 hover:text-teal-600 transition font-semibold' >
-                                        Login
-                                    </Link>
+              <>
+                <Link
+                  to='/dashboard'
+                  className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                >
+                  Dashboard
+                </Link>
 
-                                    <Link to='/signup' className='px-4 py-3 hover:text-teal-600 transition font-semibold'>
-                                        Sign Up
-                                    </Link>
-                                </>
-                            )}
+                <div
+                  onClick={() => {
+                   setRole()
+                    logOut()
+                  }}
+                  className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
+                >
+                  Logout
+                </div>
+              </>
+            ) : (
+              <>
+                <Link
+                  to='/login'
+                  className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                >
+                  Login
+                </Link>
+                <Link
+                  to='/signup'
+                  className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
                         </div>
                     </div>
                 )}

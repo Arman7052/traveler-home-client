@@ -10,7 +10,7 @@ export const addBooking = async bookingData => {
 
   const data = await response.json()
   return data
-}
+};
 
 // update room status
 export const updateStatus = async (id, status) => {
@@ -26,7 +26,7 @@ export const updateStatus = async (id, status) => {
   )
   const data = await response.json()
   return data
-}
+};
 
 // Get all bookings for a user by email
 export const getBookings = async email => {
@@ -35,7 +35,7 @@ export const getBookings = async email => {
   )
   const bookings = await response.json()
   return bookings
-}
+};
 
 // delete a booking
 export const deleteBooking = async id => {
@@ -51,4 +51,4 @@ export const deleteBooking = async id => {
 
   const data = await response.json()
   return data
-}
+};
