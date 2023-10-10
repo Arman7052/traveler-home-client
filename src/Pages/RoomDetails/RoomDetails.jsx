@@ -2,22 +2,25 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../Components/Rooms/Header";
 import RoomInfo from "../../Components/Rooms/RoomInfo";
 import RoomReservation from "../../Components/Rooms/RoomReservation";
+import { useLoaderData } from "react-router-dom";
 
 
 const RoomDetails = () => {
+    const roomData = useLoaderData();
+    console.log(roomData);
     return (
         <div>
              <Helmet>
                 <title>Traveller Home | Room Details</title>
 
             </Helmet>
-            <div className='max-w-screen-lg mx-auto '>
+            <div className='p-2 md:max-w-screen-lg md:mx-auto '>
                 <div className='flex flex-col  gap-6'>
-                    <Header ></Header>
+                    <Header roomData={roomData}  ></Header>
                     <div className='flex flex-col-reverse justify-center md:flex-row md:justify-between gap-10 '>
-                        <RoomInfo ></RoomInfo>
+                        <RoomInfo roomData={roomData} ></RoomInfo>
                         <div className='mb-10 md:col-span-7 order-first md:order-last'>
-                            <RoomReservation></RoomReservation>
+                            <RoomReservation roomData={roomData}></RoomReservation>
                         </div>
                     </div>
                 </div>
@@ -27,4 +30,3 @@ const RoomDetails = () => {
 };
 
 export default RoomDetails;
-// grid grid-cols-1  md:grid-cols-5 md:gap-12 mt-6
