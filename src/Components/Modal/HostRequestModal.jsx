@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
+import { Fade, Zoom } from 'react-awesome-reveal';
 const HostModal = ({ modalHandler, closeModal, isOpen, email }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -35,13 +36,17 @@ const HostModal = ({ modalHandler, closeModal, isOpen, email }) => {
                   Become A Host!
                 </Dialog.Title>
                 <div className='mt-2'>
+                  
+                  <Zoom duration={800}>
                   <p className='text-sm text-gray-500'>
-                    Please read all the terms & conditions before becoming a
-                    host.
+                  Get ready to host ! Before welcoming guests, take a look at our terms and conditions. Think of it as your helpful guide to make your hosting journey smooth and fun! 
                   </p>
+                  </Zoom>
+                  
                 </div>
                 <hr className='mt-8 ' />
                 <div className='flex mt-2 justify-around'>
+                  <Fade direction='left' duration={1000}>
                   <button
                     type='button'
                     className='inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'
@@ -49,6 +54,8 @@ const HostModal = ({ modalHandler, closeModal, isOpen, email }) => {
                   >
                     Continue
                   </button>
+                  </Fade>
+                  <Fade direction='right' duration={1000}>
                   <button
                     type='button'
                     className='inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2'
@@ -56,6 +63,7 @@ const HostModal = ({ modalHandler, closeModal, isOpen, email }) => {
                   >
                     Cancel
                   </button>
+                  </Fade>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -66,4 +74,4 @@ const HostModal = ({ modalHandler, closeModal, isOpen, email }) => {
   )
 }
 
-export default HostModal;
+export default HostModal; 

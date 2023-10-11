@@ -1,11 +1,12 @@
 import { AiOutlineMenu } from 'react-icons/ai'
 import avater from '../../../../public/placeholder.jpg'
-import {  useContext, useState } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { becomeHost } from '../../../apis/Authentication/auth';
 import HostModal from '../../Modal/HostRequestModal';
+import Swal from 'sweetalert2';
 
 
 const Menu = () => {
@@ -32,12 +33,25 @@ const Menu = () => {
     <div>
       <div className='relative'>
         <div className='flex flex-row items-center gap-3 '>
-          <div className='hidden md:block text-sm font-semibold py-2 px-4  hover:text-teal-600  transition cursor-pointer'>
+          <div className='hidden md:block text-sm font-semibold py-2 px-4 hover:text-teal-600 transition cursor-pointer'>
             {!role && (
               <button
                 className='cursor-pointer rounded-lg hover:bg-neutral-100 py-2 px-4 '
-                onClick={() => setModal(true)}
-                disabled={!user}
+                onClick={() => {
+                  if (!user) {
+                    Swal.fire({
+                      title: 'Please log in to add your home!',
+                      width: 600,
+                      padding: '3em',
+                      color: '#716add',
+                      background: '#fff',
+                      backdrop: ` rgba(0,0,123,0.4) left top no-repeat `
+                    });
+                  } else {
+                    setModal(true);
+                  }
+                }}
+              // disabled={!user}
               >
                 Add Your Home
               </button>
@@ -57,7 +71,7 @@ const Menu = () => {
             <div className='flex flex-col cursor-pointer'>
               <Link
                 to='/'
-                className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                className='block md:hidden px-2 py-3 hover:bg-neutral-100 transition font-semibold'
               >
                 Home
               </Link>
@@ -66,7 +80,7 @@ const Menu = () => {
                 <>
                   <Link
                     to='/dashboard'
-                    className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
+                    className='px-2 py-3 hover:bg-neutral-100 transition font-semibold'
                   >
                     Dashboard
                   </Link>
@@ -76,7 +90,7 @@ const Menu = () => {
                       setRole(null);
                       logOut();
                     }}
-                    className='px-4 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
+                    className='px-2 py-3 hover:bg-neutral-100 transition font-semibold cursor-pointer'
                   >
                     Logout
                   </div>
