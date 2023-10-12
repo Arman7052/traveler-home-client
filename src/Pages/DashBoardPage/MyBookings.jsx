@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../providers/AuthProvider'
-import { getBookings } from '../../api/bookings'
-import TableRow from '../../components/Dashboard/TableRow'
+
+import { getBookings } from '../../apis/bookings'
+import TableRow from '../../Components/DashboardCompo/TableRow'
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([])
