@@ -14,7 +14,7 @@ const Button = ({ label, onClick, disabled, outline, small, icon: Icon }) => {
           hover:opacity-80
           transition
           w-full
-          ${outline ? 'bg-white' : 'bg-blue-500'}
+          ${outline ? 'bg-white' : 'bg-teal-500'}
           ${outline ? 'border-black' : 'border-black'}
           ${outline ? 'text-black' : 'text-white'}
           ${small ? 'text-sm' : 'text-md'}

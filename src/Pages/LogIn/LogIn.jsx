@@ -72,11 +72,11 @@ const LogIn = () => {
 
             </Helmet>
 
-            <div>
+            <div className=' hidden md:block'>
+
                 <Zoom duration={1000} >
                     <h1 className='my-3 text-4xl font-bold text-center md:pt-20'>Log In</h1>
                 </Zoom>
-
                 <Lottie
                     animationData={logInLottie}
                     loop={true}
@@ -157,7 +157,7 @@ const LogIn = () => {
                             <div className='flex items-center pt-4 space-x-1'>
                                 <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                                 <p className='px-3 text-sm dark:text-gray-400'>
-                                    Login with 
+                                    Login with
                                 </p>
                                 <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
                             </div>
@@ -168,7 +168,7 @@ const LogIn = () => {
                             </div>
                             <p className='px-6 text-sm text-center text-gray-400'>
                                 New in Traveller Home?{' '}
-                                <Link  to='/signup' className='hover:underline hover:text-teal-500 text-gray-600'  >
+                                <Link to='/signup' className='hover:underline hover:text-teal-500 text-gray-600'  >
                                     Sign up now
                                 </Link>
                                 .

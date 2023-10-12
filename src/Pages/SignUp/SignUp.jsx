@@ -91,12 +91,12 @@ const SignUp = () => {
 
 
     return (
-        <div className='flex flex-col justify-center items-center text-center md:flex-row md:justify-evenly'>\
+        <div className='flex flex-col justify-center items-center text-center md:flex-row md:justify-evenly'>
             <Helmet>
                 <title>Traveller Home | SignIn</title>
 
             </Helmet>
-            <div className=''>
+            <div className='hidden md:block'>
                 <Zoom duration={1000} >
                     <h1 className='my-3 text-4xl font-bold text-center md:pt-20'>Sign Up</h1>
                 </Zoom>
@@ -113,6 +113,7 @@ const SignUp = () => {
                         <div className='mb-8 text-center flex justify-center items-center'>
 
                             <Link to={'/'}><Logo></Logo></Link>
+                            
                         </div>
                         <form
                             onSubmit={handleSubmit}

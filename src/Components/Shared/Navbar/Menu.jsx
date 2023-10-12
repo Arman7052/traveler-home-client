@@ -1,7 +1,7 @@
 import { AiOutlineMenu } from 'react-icons/ai'
 import avater from '../../../../public/placeholder.jpg'
 import { useContext, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../../../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import { becomeHost } from '../../../apis/Authentication/auth';
@@ -10,11 +10,10 @@ import Swal from 'sweetalert2';
 
 
 const Menu = () => {
+  const navigate =useNavigate()
   const { user, logOut, role, setRole } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false)
-  // const toggleOpen = useCallback(() => {
-  //   setIsOpen(value => !value)
-  // }, []);
+ 
 
   const [modal, setModal] = useState(false)
   console.log(role)
@@ -45,8 +44,12 @@ const Menu = () => {
                       padding: '3em',
                       color: '#716add',
                       background: '#fff',
-                      backdrop: ` rgba(0,0,123,0.4) left top no-repeat `
-                    });
+                      backdrop: ` rgba(0,0,123,0.4) left top no-repeat `,
+                      
+                    },
+                    navigate('/login')
+                    );
+                    
                   } else {
                     setModal(true);
                   }
