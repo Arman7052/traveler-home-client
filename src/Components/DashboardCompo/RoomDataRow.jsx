@@ -3,6 +3,7 @@ import { useState } from 'react'
 import toast from 'react-hot-toast'
 import DeleteModal from '../Modal/DeleteModal'
 import { deleteRoom } from '../../apis/rooms'
+import { MdOutlineDeleteForever } from 'react-icons/md'
 
 
 const RoomDataRow = ({ room, fetchRooms }) => {
@@ -59,16 +60,16 @@ const RoomDataRow = ({ room, fetchRooms }) => {
           {format(new Date(room?.to), 'P')}
         </p>
       </td>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='p-3 border-b border-gray-200  bg-white text-lg  hover:text-2xl text-center'>
         <span
           onClick={openModal}
           className='relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight'
         >
           <span
             aria-hidden='true'
-            className='absolute inset-0 bg-red-200 opacity-50 rounded-full'
+            className='absolute inset-0    opacity-50 '
           ></span>
-          <span className='relative'>Delete</span>
+          <span className='relative text-red-500  '><MdOutlineDeleteForever></MdOutlineDeleteForever></span>
         </span>
         <DeleteModal
           isOpen={isOpen}

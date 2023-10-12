@@ -15,8 +15,7 @@ const Menu = () => {
   const [isOpen, setIsOpen] = useState(false)
  
 
-  const [modal, setModal] = useState(false)
-  console.log(role)
+  const [modal, setModal] = useState(false);
   const modalHandler = email => {
     becomeHost(email).then(data => {
       console.log(data)
