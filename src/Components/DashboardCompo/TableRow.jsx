@@ -24,6 +24,8 @@ const TableRow = ({ booking, fetchBookings }) => {
   }
   return (
     <tr>
+
+      {/* Booking image */}
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <div className='flex items-center'>
           <div className='flex-shrink-0'>
@@ -40,42 +42,57 @@ const TableRow = ({ booking, fetchBookings }) => {
           </div>
         </div>
       </td>
+
+      {/* Booking Location */}
+
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>{booking?.location}</p>
       </td>
+
+      {/* Booking Price */}
+
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>${booking?.price}</p>
       </td>
+
+      {/* Booking date Start */}
+
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>
           {format(new Date(booking?.from), 'P')}
         </p>
       </td>
+
+      {/* Booking date end */}
+
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>
           {format(new Date(booking?.to), 'P')}
         </p>
       </td>
+
+      {/* Modal */}
+
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-        <span
-          onClick={() => setIsOpen(true)}
-          className='relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight'
-        >
-          <span
-            aria-hidden='true'
-            className='absolute inset-0 bg-red-200 opacity-50 rounded-full'
-          ></span>
+       
+        <span onClick={() => setIsOpen(true)} className='relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight'>
+         
+          <span aria-hidden='true' className='absolute inset-0 bg-red-200 opacity-50 rounded-full' ></span>
           <span className='relative'>Cancel</span>
+
         </span>
+
+        {/* Delete Modal */}
+
         <DeleteModal
           isOpen={isOpen}
           closeModal={closeModal}
           modalHandler={modalHandler}
           id={booking._id}
-        />
+        ></DeleteModal>
       </td>
     </tr>
   )
 }
 
-export default TableRow ;
+export default TableRow;

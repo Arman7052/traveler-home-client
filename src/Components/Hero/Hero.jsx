@@ -9,86 +9,83 @@ import animation1o1 from '../../assets/lottie/animation1o1.json';
 import { Fade, Zoom } from "react-awesome-reveal";
 const Hero = () => {
   return (
-    
-      <div className='pt-32 ' >
-        <Carousel className="pb-2 text-center px-2" infiniteLoop={true}>
-          <div className="carousel-sle text-violet-950 flex flex-col-reverse justify-center  items-center md:flex-row md:justify-between text-xm md:text-lg md:font-semibold md:pl-10">
+
+    <div className='pt-32 ' >
+      <Carousel className="pb-2 text-center px-2" infiniteLoop={true}>
+        <div className="carousel-sle text-violet-950 flex flex-col-reverse justify-center  items-center md:flex-row md:justify-between text-xm md:text-lg md:font-semibold md:pl-10">
+
+          <Lottie
+            animationData={animation1o1}
+            loop={true}
+            autoplay={true}
+            style={{ width: '40%', height: 'auto' }}
+          />
+
+
+          <div >
+            <Zoom duration={3000}>
+              <p className='font-serif'>
+                Welcome to Traveller Home !<br />
+                Where journeys are reimagined
+              </p>
+            </Zoom>
+          </div>
+
+          <Lottie
+            animationData={animation1}
+            loop={true}
+            autoplay={true}
+            style={{ width: '40%', height: 'auto' }}
+          />
+
+
+        </div>
+        <div className="carousel-sle text-black flex flex-col justify-center  items-center md:flex-row md:justify-evenly text-xm md:text-lg md:font-semibold md:pl-6">
+
+          <Lottie
+            animationData={animation2}
+            loop={true}
+            autoplay={true}
+            style={{ width: '60%', height: '50%' }}
+          />
 
 
 
-            <Lottie
-              animationData={animation1o1}
-              loop={true}
-              autoplay={true}
-              style={{ width: '40%', height: 'auto' }}
-            />
-
-
-            <div >
-              <Zoom duration={3000}>
-                <p className='font-serif'>
-                  Welcome to Traveller Home !<br />
-                  Where journeys are reimagined
-                </p>
-              </Zoom>
+          <Fade direction='right' duration={2000}>
+            <div className='text-lg md:text-xl lg:text-3xl'>
+              <p>Ready for a peaceful retreat to restore your energy?</p>
             </div>
+          </Fade>
 
-            <Lottie
-              animationData={animation1}
-              loop={true}
-              autoplay={true}
-              style={{ width: '40%', height: 'auto' }}
-            />
+        </div>
+        <div className="carousel-sle text-black flex flex-col justify-center  items-center md:flex-row md:justify-between text-xm md:text-lg md:font-semibold md:pl-6">
 
+          <TypeAnimation
+            sequence={[
+              'You are not alone because ',
+              1000,
+              'were here for you!',
+              1000,
 
-          </div>
-          <div className="carousel-sle text-black flex flex-col justify-center  items-center md:flex-row md:justify-evenly text-xm md:text-lg md:font-semibold md:pl-6">
-
-            <Lottie
-              animationData={animation2}
-              loop={true}
-              autoplay={true}
-              style={{ width: '60%', height: '50%' }}
-            />
-
-
-
-            <Fade direction='right' duration={2000}>
-              <div className='text-lg md:text-xl lg:text-3xl'>
-                <p>Ready for a peaceful retreat to restore your energy?</p>
-              </div>
-            </Fade>
-
-          </div>
-          <div className="carousel-sle text-black flex flex-col justify-center  items-center md:flex-row md:justify-between text-xm md:text-lg md:font-semibold md:pl-6">
-
-            <TypeAnimation
-              sequence={[
-                'You are not alone because ',
-                1000,
-                'were here for you!',
-                1000,
-
-              ]}
-              wrapper="span"
-              speed={60}
-              style={{ fontSize: '2em', textAlign: 'right' }}
-              repeat={Infinity}
-            />
+            ]}
+            wrapper="span"
+            speed={60}
+            style={{ fontSize: '2em', textAlign: 'right' }}
+            repeat={Infinity}
+          />
 
 
-            <Lottie
-              animationData={animation3}
-              loop={true}
-              autoplay={true}
-              style={{ width: '50%', height: '80%' }}
-            />
+          <Lottie
+            animationData={animation3}
+            loop={true}
+            autoplay={true}
+            style={{ width: '50%', height: '80%' }}
+          />
 
+        </div>
+      </Carousel>
+    </div>
 
-          </div>
-        </Carousel>
-      </div>
-    
   );
 };
 

@@ -1,5 +1,4 @@
 
-
 const Heading = ({ title, subtitle, center }) => {
     return (
         <div>

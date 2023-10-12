@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 
 const AddRoom = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [dates, setDates] = useState({
     startDate: new Date(),
@@ -83,22 +83,22 @@ const AddRoom = () => {
   const handleDates = ranges => {
     setDates(ranges.selection)
   }
-    return (
-        <div>
-          <Helmet>
-                <title>Traveller Home | Add Room </title>
+  return (
+    <div>
+      <Helmet>
+        <title>Traveller Home | Add Room </title>
 
-            </Helmet>
-            <AddRoomForm
-            handleSubmit={handleSubmit}
-            loading={loading}
-            handleImageChange={handleImageChange}
-            uploadButtonText={uploadButtonText}
-            dates={dates}
-            handleDates={handleDates}
-            ></AddRoomForm>
-        </div>
-    );
+      </Helmet>
+      <AddRoomForm
+        handleSubmit={handleSubmit}
+        loading={loading}
+        handleImageChange={handleImageChange}
+        uploadButtonText={uploadButtonText}
+        dates={dates}
+        handleDates={handleDates}
+      ></AddRoomForm>
+    </div>
+  );
 };
 
 export default AddRoom;

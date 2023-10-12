@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 
 
 const Menu = () => {
-  const navigate =useNavigate()
+  const navigate = useNavigate()
   const { user, logOut, role, setRole } = useContext(AuthContext);
   const [isOpen, setIsOpen] = useState(false)
- 
+
 
   const [modal, setModal] = useState(false);
   const modalHandler = email => {
@@ -44,11 +44,11 @@ const Menu = () => {
                       color: '#716add',
                       background: '#fff',
                       backdrop: ` rgba(0,0,123,0.4) left top no-repeat `,
-                      
+
                     },
-                    navigate('/login')
+                      navigate('/login')
                     );
-                    
+
                   } else {
                     setModal(true);
                   }
@@ -59,6 +59,8 @@ const Menu = () => {
               </button>
             )}
           </div>
+
+
           <div onClick={() => setIsOpen(!isOpen)} className='p-4  md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-md cursor-pointer hover:shadow-md transition'   >
 
             <AiOutlineMenu className='text-teal-600 ' ></AiOutlineMenu>
@@ -67,6 +69,8 @@ const Menu = () => {
 
           </div>
         </div>
+
+
 
         {isOpen && (
           <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm'>
@@ -117,12 +121,16 @@ const Menu = () => {
           </div>
         )}
       </div>
+
+
       <HostModal
         email={user?.email}
         modalHandler={modalHandler}
         isOpen={modal}
         closeModal={closeModal}
       ></HostModal>
+
+
     </div>
   );
 };

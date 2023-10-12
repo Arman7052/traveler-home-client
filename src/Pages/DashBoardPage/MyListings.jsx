@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../providers/AuthProvider'
 import { getRooms } from '../../apis/rooms'
 import RoomDataRow from '../../Components/DashboardCompo/RoomDataRow'
+import { Helmet } from 'react-helmet-async'
 
 const MyListings = () => {
   const { user } = useContext(AuthContext)
@@ -14,6 +15,10 @@ const MyListings = () => {
   }, [user])
   return (
     <div className='container mx-auto px-4 sm:px-8'>
+      <Helmet>
+        <title>Traveller Home | My Added Home </title>
+
+      </Helmet>
       <div className='py-8'>
         <div className='-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto'>
           <div className='inline-block min-w-full shadow rounded-lg overflow-hidden'>

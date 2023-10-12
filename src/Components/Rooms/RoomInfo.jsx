@@ -1,6 +1,6 @@
 
 
-const RoomInfo = ({roomData}) => {
+const RoomInfo = ({ roomData }) => {
     return (
         <div>
             <div className='col-span-5 flex flex-col gap-4'>
@@ -8,26 +8,25 @@ const RoomInfo = ({roomData}) => {
                     <div className='text-xl font-semibold flex flex-row items-center gap-2' >
                         <div>{roomData.host.name}</div>
 
-                        <img
-                            className='rounded-full'
-                            height='30'
-                            width='30'
-                            alt='Avatar'
-                            src={roomData.host.image}
-                        />
+                        <img className='rounded-full' height='30' width='30' alt='Avatar' src={roomData.host.image} />
+
                     </div>
+
                     <div className=' flex  flex-row  items-center  gap-4  font-light text-neutral-500' >
+
                         <div>{roomData.guests} Guests</div>
                         <div>{roomData.bedrooms} Bedrooms</div>
                         <div>{roomData.bathrooms} Bathroom</div>
+
                     </div>
                 </div>
 
                 <hr />
 
                 <div className=' text-lg font-serif  text-neutral-500'>
-                    
+
                     {roomData.description}
+
                 </div>
                 <hr />
             </div>

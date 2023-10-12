@@ -8,6 +8,9 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
       <form onSubmit={handleSubmit}>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
           <div className='space-y-6'>
+
+            {/* Location Input */}
+
             <div className='space-y-1 text-sm'>
               <label htmlFor='location' className='block text-gray-600'>
                 Location
@@ -19,8 +22,10 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
                 type='text'
                 placeholder='Location'
                 required
-              />
+              ></input>
             </div>
+
+            {/* Category Input */}
 
             <div className='space-y-1 text-sm'>
               <label htmlFor='category' className='block text-gray-600'>
@@ -39,6 +44,8 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
               </select>
             </div>
 
+            {/* Select Date Range */}
+
             <div className='space-y-1'>
               <label htmlFor='location' className='block text-gray-600'>
                 Select Availability Range
@@ -49,6 +56,9 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
                 rangeColors={['#00CED1']} />
             </div>
           </div>
+
+          {/* Location Title */}
+
           <div className='space-y-6'>
             <div className='space-y-1 text-sm'>
               <label htmlFor='title' className='block text-gray-600'>
@@ -63,6 +73,8 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
                 required
               />
             </div>
+
+            {/* Image Input */}
 
             <div className=' p-4 bg-white w-full  m-auto rounded-lg'>
               <div className='file_upload px-5 py-3 relative border-4 border-dotted border-gray-300 rounded-lg'>
@@ -84,6 +96,10 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
                 </div>
               </div>
             </div>
+
+
+            {/* Price Input */}
+
             <div className='flex justify-between gap-2'>
               <div className='space-y-1 text-sm'>
                 <label htmlFor='price' className='block text-gray-600'>
@@ -98,6 +114,8 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
                   required
                 />
               </div>
+
+              {/* Guests Allowed number */}
 
               <div className='space-y-1 text-sm'>
                 <label htmlFor='guest' className='block text-gray-600'>
@@ -114,6 +132,8 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
               </div>
             </div>
 
+            {/* Bedroom number */}
+
             <div className='flex justify-between gap-2'>
               <div className='space-y-1 text-sm'>
                 <label htmlFor='bedrooms' className='block text-gray-600'>
@@ -128,6 +148,8 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
                   required
                 />
               </div>
+
+              {/* Bathroom number */}
 
               <div className='space-y-1 text-sm'>
                 <label htmlFor='bathrooms' className='block text-gray-600'>
@@ -144,6 +166,8 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
               </div>
             </div>
 
+            {/* Location Description */}
+
             <div className='space-y-1 text-sm'>
               <label htmlFor='description' className='block text-gray-600'>
                 Description
@@ -158,10 +182,9 @@ const AddRoomForm = ({ handleSubmit, dates, handleDates, loading = false, handle
           </div>
         </div>
 
-        <button
-          type='submit'
-          className='w-full p-3 pb-2 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-teal-500'
-        >
+        {/* Submit Button */}
+
+        <button type='submit' className='w-full p-3 pb-2 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-teal-500' >
           {loading ? (
             <ImSpinner9 className='m-auto animate-spin' size={24} />
           ) : (
